@@ -1,0 +1,28 @@
+x-app: &default-app
+  build:
+    context: "."
+    target: "build-app"
+    args:
+      - "UID=${UID:-1000}"
+      - "GID=${GID:-1000}"
+      - "DEBUG=${DEBUG:-false}"
+      - "NODE_ENV=${NODE_ENV:-development}"
+  env_file:
+    - ".env.docker"
+  restart: "${DOCKER_RESTART_POLICY:-unless-stopped}"
+  stop_grace_period: "3s"
+  tty: true
+
+
+services:
+  spatial-live:
+    <<: *default-app
+    deploy:
+      resources:
+        limits:
+          cpus: "${DOCKER_WEB_CPUS:-0}"
+          memory: "${DOCKER_WEB_MEMORY:-0}"
+    volumes:
+      - "./userdata:/app/src/data"
+    ports:
+      - "8225:8225"

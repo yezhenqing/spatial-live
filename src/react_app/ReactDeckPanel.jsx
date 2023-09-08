@@ -68,7 +68,7 @@ export default function ReactDeckPanel(props) {
 
   //useEffect( () => {
   //  console.log("Effect layers in store:", appstore._layers_config)
-  //})
+  //}, [])
 
   //image parameters
   const IMG_WIDTH = appstore.imgdata.width

@@ -4,14 +4,14 @@ Installation & Usage
 Installation
 ------------
 
-First, please go to github website to download the spatial-lvv:
+First, please go to github website to download the spatial-live:
 
 .. code-block:: console
 
-  $ git clone https://github.com/yezhenqing/spatial-lvv
+  $ git clone https://github.com/yezhenqing/spatial-live
 
 
-There are two ways to start spatial-lvv for different users:
+There are two ways to start spatial-live for different users:
 
 *  regular user 
 
@@ -19,7 +19,7 @@ You may need to install `docker <https://docs.docker.com/engine/install/>`_ on y
 
 .. code-block:: console
 
-   $ cd spatial-lvv
+   $ cd spatial-live
    $ docker compose -f docker-compose.yml -d up
 
 *  development user
@@ -28,7 +28,7 @@ If you are a development user, I will assume you already installed `node/npm <ht
 
 .. code-block:: console
 
-   $ cd spatial-lvv
+   $ cd spatial-live
    $ npm install
    $ npm run dev
 
@@ -36,7 +36,7 @@ If you are a development user, I will assume you already installed `node/npm <ht
 Usage
 -----
 
-After the docker or node server started, the spatial-lvv will be ready for exploration. You can 
+After the docker or node server started, the spatial-live will be ready for exploration. You can 
 open your browser to visit the url link: http://localhost:8225/
 
 .. tip::
@@ -45,22 +45,22 @@ open your browser to visit the url link: http://localhost:8225/
 
 .. image:: images/install-usage-1.png
 
-Spatial-LVV has provided a built-in demo for exploration, so you can be familiar with the tool quickly.
+Spatial-live has provided a built-in demo for exploration, so you can be familiar with the tool quickly.
 To start with your own case, you can wrap up your data files into a new clean folder (For example, suppose
-we have our own data set -- kidney), and then copy this folder into the proper location. 
+we have our own data set -- liver-demo), and then copy this folder into the proper location. 
 
-If you are using spatial-lvv via docker, copy to spaital-lvv/userdata/:
+If you are using spatial-live via docker, copy to spaital-live/userdata/:
 
 .. code-block:: console
 
-   $ cp -r /your_paht_to/kidney spatial-lvv/userdata/
+   $ cp -r /your_paht_to/liver-demo spatial-live/userdata/
    $ docker compose -f docker-compose.yml -d up
 
-If you are using spatial-lvv via node, copy to spatial-lvv/src/data/:
+If you are using spatial-live via node.js, copy to spatial-live/src/data/:
 
 .. code-block:: console
 
-   $ cp -r /your_paht_to/kidney spatial-lvv/src/data/
+   $ cp -r /your_paht_to/liver-demo spatial-live/src/data/
    $ npm run dev
 
 Now you should be able to see the data set you just added as shown below:

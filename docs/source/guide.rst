@@ -4,18 +4,18 @@ User Guide
 A quick demo
 ------------
 
-Spatial-LVV has a built-in demo for exploration, the user interface is quite intrinsic and straigthforward. 
-The left panel mainly control the on/off of the layers for different variables. By toggling it to "on" state, 
-the corresponding layer will be added into the visual output. And the "yellow" color of a menu item indicates 
-the current active layer.
+Spatial-live has shipped with a built-in exploration demo with an intuitive and straigthforward user interface.
+The left panel primarily control the activation or deactivation of various variable layers. When toggled to the
+"on" state, the corresponding layer will be added into the visual output, with the active layer indicated by a 
+"yellow" menu item.
 
-The middle pane will render the visual output timely and responsively, as long as the setting paramters changed.
-It supports several mouse actions, including zoom ( mouse wheel ), rotate (mouse left), and drag ("Ctrl" + mouse left). 
-If you are Mac OS user, probably need to replace the "Ctrl" with the "Command" key.
+The middle pane renders the visual output promptly and responsively, updating whenever paramters are modified.
+It offers several mouse actions: zooming (using the mouse wheel), rotating (by holding the left mouse button), 
+and dragging (by holding "Ctrl" + left mouse button). Mac OS users may need to replace the "Ctrl" with the "Command" key.
 
-The right-top panel provides a convinience interface for adjusting those parameters to control the apperance
-of the current active layer, and organize each layer well for a good layout. Particullaly, You can switch between 
-the two view modes, including the 2D orthographic and the 3D orbiting perspective mode.
+The top-right panel offers a user-friendly interface for conveniently adjusting parameters that control the appearance
+of the currently active layer and optimizing the layout of each layer. Particullaly, it allows you to switch between 
+two view modes: the 2D orthographic mode and the 3D orbiting perspective mode for a versatile viewing experience.
 
 .. video:: _static/spatial-demo-video.mp4
    :autoplay:
@@ -28,103 +28,104 @@ the two view modes, including the 2D orthographic and the 3D orbiting perspectiv
 Variable types and visual layers
 --------------------------------
 
-Basically, in spatial-omics data processing, no matter where the data source come from, to spatial-lvv's perspective
-view, it can always be divided into four types of variables, namely categorial variable, numerical variable, gene heatmap
-variable, and geometric shape variable. Spatiall-LVV will generate the corresponding visual layers for these different 
-variables accordingly. We will list them out as below:
+Basically, in spatial omics data processing, regardless of the data source's origin, from the perspective of spatial-live,
+datasets can consistentlly be categorized into four variable types: categorical, numerical, gene heatmap and geometric
+shape variables. Spatiall-live adeptly generates tailored visual layers for each of these variable types. These are  
+elucidated below:
 
 *  **Categorial variable -> ScatterplotLayer**
 
-   Each categorial variable will be rendered into a ScatterplotLayer, and each data element will be represented by a 
-   small circle dot (spatially-resolved spot) with filled color assignment from its categorial value. The radius of 
-   these circle points can be adjusted and corresponded to the spatial resolution of spots.
+   Each categorial variable will be rendered into a ScatterplotLayer, where each data element is represented by a 
+   small circle dot (spatially-resolved spot). The color of these dots is assigned based on their categorial value,
+   and the radius of these circle points can be adjusted to match the spatial resolution of spots.
 
 *  **Numerical variable -> ColumnLayer**
 
-   Each numerical variable can be rendered into a ColumnLayer, and each data element will be represented by a extruded
-   cylinder column. The height of each column will be proporsional to the range of numerical values. Similar to the categorial 
-   variable in ScatterplotLayer, the radius of cylinder can be adjusted and corresponded to the spatial resolution of spots.
+   Each numerical variable can be visualized using a ColumnLayer, where each data element is represented by an extruded
+   cylinder column. The height of each column is proporsional to the range of numerical values. Similar to the categorical 
+   variable in ScatterplotLayer, the radius of cylinder can be adjusted to match the spatial resolution of spots.
 
 *  **Gene Heatmap variable -> HeatBitmapLayer**
 
-   Gene heatmap is essentially a numerical variable, but we distinguish it from the above numerical variable, mostly because
-   of the spatial resolution of spots on the image, namely the gap distance between spots. For example, the "radius" parameter
-   in the ScatterplotLayer and ColumnLayer. For gene heatmap variable, spatial-lvv will generate a continuous heatmap layer
-   with Gaussian estimation for those spatial gaps based on the gene expression values as weights. We used the Fast Gaussian 
-   kernel density estimation (`fast-kde <https://github.com/uwdata/fast-kde>`_) for gene heatmap plotting here. 
+   Gene heatmap variables, while fundamentally numerical, are distinguished from the previously mentioned numerical variables
+   due to the spatial resolution of spots on the image, particularly the gap distance between spots, akin to the "radius"
+   parameter in the ScatterplotLayer and ColumnLayer. For gene heatmap variables, spatial-live generates a continuous heatmap
+   layer using Gaussian estimation to fill these spatial gaps, using gene expression values as weights. Here, we employ the 
+   Fast Gaussian kernel density estimation (`fast-kde <https://github.com/uwdata/fast-kde>`_) for gene heatmap plotting. 
 
 
 *  **Geometric shape variable -> GeoJsonLayer**
 
-   Each geometric shape variable actually is one `GeoJson <https://geojson.org/>`_ file, containing feature collections about 
-   various geometric shapes rendered to one GeoJsonLayer.  It is optional for spatial-lvv, but it may be useful when people want
-   to add some customized annotation to some region of interest (ROI) on the image, for example cancer-cell enrich regions, or
+   Each geometric shape variable corresponds to a `GeoJson <https://geojson.org/>`_ file, encompassing collections of diverse 
+   geometric shapes rendered as a GeoJsonLayer. While optional in spatial-live, this feature can prove useful when users wish
+   to include custom annotations in specific regions of interest (ROI) on the image, such as cancer cell-enriched regions or
    cell segmentation.
 
 
 Input files
 -----------
 
-You need to provide some input files to launtch spatial-lvv, and at least two files are mandatorily required.
-One is the image file, and the other is CSV file containing properly formatted columns (corresponding to different
-types of variables). To make things simplify, we would use the files from the "quickdemo" to illustrate the 
-specification of the format for these files.
+To launch spatial-live, you'll need to provide specific input files, with at least two being mandatory. The first
+essential file is the image file, and the second is a CSV file containing properly formatted columns, each corresponding
+to different types of variables. To simplify this process, we'll use files from the "quickdemo/kidney" to illustrate 
+the format specifications for these files.
 
-| quickdemo/output      (please don't put "/output" in your real data)
+| quickdemo/kidney/output/
 | ├── kidney_demo.png
 | ├── kidney_demo.csv
 | ├── json          
 | │   └── ROI_kidney.json
+| │   └── leiden_kidney.json
+   
+* **IMAGE file** (for example: quickdemo/kidney/output/kidney_demo.png)
 
-
-* **IMAGE file** (for example: quickdemo/output/kidney_demo.png)
-
-  Currently, spatial-lvv only accepts the PNG file for the input image (other format images can be transformed to PNG 
-  easily by many tools), and importantly, this image will define the pixel coordinate space for all data plotting. As 
-  an example, please refer to the file "spatial-lvv/quickdemo/output/kidney_demo.png". Only one image file is allowed 
-  for one case.
+  Currently, spatial-live exclusively accepts PNG files as input images (other image formats can be easily converted 
+  to PNG using various tools). It is crucial to note that this input image defines the pixel coordinate space for all
+  data plotting within the tool. You can find an example image file at "spatial-live/quickdemo/kidney/output/kidney_demo.png".
+  Please note that only one image file is allowed per case.
 
 * **CSV file**
 
-  The CSV file is the primary file for spatial-lvv to define those variables and correspoding layers, and there are
-  several constraints need to stand by for this file. And only one CSV file is allowed for one case.
+  The CSV file serves as the primary means for spatial-live to define variables and their correspoding layers, and it
+  comes with specific constraints that must be followed. Please note that each case should have only one CSV file.
   
-   Mandatory columns: there are three columns must be presented in the file header.
-      "id:spot": the unique id represents the cell/spot entity.
+   Mandatory columns: The file header must include three essential columns.
+      "id:spot": the unique ideentifier representing each cell/spot entity.
 
-      "pos:pixel_x": the pixel position along X-axis in the image for this entity.
+      "pos:pixel_x": the pixel position along the X-axis in the image for each entity.
 
-      "pos:pixel_y": the pixel position along Y-axis in the image for this entity. 
+      "pos:pixel_y": the pixel position along the Y-axis in the image for each entity. 
 
-   Categorial columns: need to start with "char:", and followed by any variable name.
-      "char:leiden": it can be replaced with other categorial variable name for "leiden". 
+   Categorial columns: need to start with "char:", and followed by a variable name. e.g.
+      "char:leiden": this represents a categorical variable labeled "leiden". 
 
-      "char:phase": it can be replaced with other categorial variable name for "phase". 
-
-   Numerical columns: need to start with "num:", and followed by any variable name.
-      "num:Alpl": it can be replaced with other numerical variable name for "Alpl". 
+   Numerical columns: need to start with "num:", and followed by a variable name. e.g.
+      "num:Plat": this represents a numerical variable labeled "Plat". 
       
-      "num:Sprr2a3": it can be replaced with other numerical variable name for "Sprr2a3". 
+      "num:Sprr1a": this represents a numerical variable labeled "Sprr1a". 
 
-   Gene-heatmap columns: need to start with "gene:", and followed by any gene name.
-      "gene:Cryab": it can be replaced with other gene name for "Cryab".
+   Gene-heatmap columns: need to start with "gene:", and followed by a gene name. e.g.
+      "gene:Cryab": it represents a gene name for "Cryab".
       
-      "gene:Sprr1a": it can be replaced with other gene name for "Sprr1a".  
+      "gene:Mrps6": it represents a gene name for "Mrps6".  
 
+
+The following table provides a few rows from the example kidney_demo.csv file:
 
 .. csv-table:: kidney_demo.csv
-   :header: "id:spot", "pos:pixel_x", "pos:pixel_y", "char:leiden", "char:phase", "gene:Cryab", "gene:Sprr1a", "num:Alpl", "num:Sprr2a3"
-   :widths: 15, 10, 10, 5, 5, 10, 10, 10, 10
+   :header: "id:spot", "pos:pixel_x", "pos:pixel_y", "char:leiden", "gene:Cryab", "gene:Mrps6", "num:Plat", "num:Sprr1a"
+   :widths: 15, 10, 10, 5, 10, 10, 10, 10
 
-   "AAACAAGTATCTCCCA-1", 5, G1, 2.450, 1.293, 2.190, 0.0, 1392, 750
-   "AAACACCAATAACTGC-1", 5, G1, 0.0, 1.752, 2.728, 0.0, 421, 569
+   "AAACAAGTATCTCCCA-1", 1392.05, 750.29, 1, 2.449, 2.826, 2.971, 1.293
+   "AAACACCAATAACTGC-1", 421.53, 569.53, 1, 0.000, 3.212, 2.728, 1.752
 
 
 * **JSON file**
 
-  The JSON file is optional, but it can be useful when we want to annotate some regions of interested (ROI) on the image.
-  There are two keys ("id" and "group") in "properties" are must required for each feature. Multiple JSON files are supported, 
-  and need to be deposited into the same "json" folder. 
+  The JSON file is an optional component but proves valuable when annotating regions of interest (ROI) on the image.
+  Each feature within the JSON file must contain two mandatory keys ("id" and "group") in the "properties" field. It
+  is worth noting that spatial-live supports multiple JSON files, and these files should be placed within the same 
+  "json" folder for easy integration. The following content is extracted from the ROI_kidney.json file. 
 
 .. code-block:: json
 
@@ -158,10 +159,10 @@ specification of the format for these files.
 Concise control interface
 -------------------------
 
-Spatial-lvv will provide the concise control interface in the top-right corner,
-and the content will dependant on the current active layer. Most of those items
-are constant, only few items will changed acoordingly. The below one is an example
-from an active ScatterplotLayer, others are similar.
+Spatial-live offers a concise control interface located in the top-right corner.
+The content of this interface depends on the currently active layer. While most 
+items remain constant, a few will change acoordingly. The following example pertains
+to an active ScatterplotLayer, with other layers having a similar interface.
 
 
 .. |pic1| image:: images/guide-cntl-panel.png
@@ -174,7 +175,7 @@ from an active ScatterplotLayer, others are similar.
 |                   +------------------------------------------+
 |                   | the output image name                    |
 |                   +------------------------------------------+
-|                   | current active layer                     |
+|                   | currently active layer                   |
 |                   +------------------------------------------+
 |                   | the layer z-height in 3D oribit          |
 |                   +------------------------------------------+
@@ -196,9 +197,10 @@ from an active ScatterplotLayer, others are similar.
 
 Tooltip and image export
 ------------------------
-It is worth to mention that tooltip will be available for most of layers, except
-the Gene-Heatmap layer. You can enable this function by toggling on/off the "tooltip"
-button in the control panel. 
+It is worth noting that tooltips are available for most layers, except for the Gene
+Heatmap layer. You can enable this feature by toggling the "tooltip" button (on/off) 
+in the control panel. 
 
-And also, after all layers are decided and well-stacked, you can export the final 
-visualization to an external image by clicking the button "Export Image".
+Additionally, once you have configured and stacked all the layers to your satisfaction,
+you can export the final visualization to an external image by clicking the "Export Image"
+button in the middle pane.

@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Spatial-LVV'
+project = 'Spatial-live'
 copyright = '2023, Zhenqing Ye'
 author = 'Zhenqing Ye'
 

@@ -22,7 +22,7 @@ deckgl, vue3, and react framework, alongside numerous other open-source librarie
 not all be listed here. I am immensely grateful for the contributions of these libraries and
 the invaluable work they have provided.
 
-Please visit our [documentation](https://github.com/yezhenqing/spatial-live) for installation, tutorials, examples and more.
+Please visit our [documentation](https://yezhenqing.github.io/spatial-live/) for installation, tutorials, examples and more.
 
 
 ## Installation & Usage

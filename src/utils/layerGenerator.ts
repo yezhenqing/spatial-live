@@ -25,7 +25,7 @@ const defaultConfig = {
   visible: true,
   opacity: 0.8,
   z_height: 0,
-  radius: 6,
+  radius: 8,
   colors: {}
 }
 

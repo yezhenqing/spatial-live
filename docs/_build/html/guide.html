@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Guide &mdash; Spatial-live 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=8d563738"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Data Preparation Tutorial - Kidney Visium" href="notebooks/kidney_demo.html" />
+    <link rel="prev" title="Installation &amp; Usage" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: lightgray" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Spatial-live
+              <img src="_static/spatial-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation &amp; Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#a-quick-demo">A quick demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#variable-types-and-visual-layers">Variable types and visual layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#input-files">Input files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#concise-control-interface">Concise control interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tooltip-and-image-export">Tooltip and image export</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/kidney_demo.html">Data Preparation Tutorial - Kidney Visium</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/kidney_demo.html#Python-virtual-environment-setup">Python virtual environment setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/kidney_demo.html#10X-Visium-spatial-data-preparation">10X Visium spatial data preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/kidney_demo.html#Preprocessing-and-quality-control">Preprocessing and quality control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/kidney_demo.html#Highly-variable-genes-and-leiden-clustering">Highly variable genes and leiden clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/kidney_demo.html#Preparing-input-files-for-spatial-live">Preparing input files for spatial-live</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/kidney_demo.html#Geometric-Json-file">Geometric Json file</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/liver_demo.html">Data Preparation Tutorial - Liver Vizgen</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#Python-virtual-environment-setup">Python virtual environment setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#Vizgen-MERFISH-Mouse-Liver-data-preparation">Vizgen MERFISH Mouse Liver data preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#Base-Image-Preprocessing">Base Image Preprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#Data-preprocessing-and-quality-control">Data preprocessing and quality control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#Spatial-Distributions-of-Cells">Spatial Distributions of Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#Assign-Cell-Types">Assign Cell Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#Hepatocyte-Zonation:-Peri-Portal-and-Peri-Central-zones">Hepatocyte Zonation: Peri-Portal and Peri-Central zones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#Preparing-input-files-for-spatial-live">Preparing input files for spatial-live</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#A-screen-snapshot-from-spatial-live">A screen snapshot from spatial-live</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: lightgray" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Spatial-live</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">User Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/guide.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="user-guide">
+<h1>User Guide<a class="headerlink" href="#user-guide" title="Link to this heading"></a></h1>
+<section id="a-quick-demo">
+<h2>A quick demo<a class="headerlink" href="#a-quick-demo" title="Link to this heading"></a></h2>
+<p>Spatial-live has shipped with a built-in exploration demo with an intuitive and straigthforward user interface.
+The left panel primarily control the activation or deactivation of various variable layers. When toggled to the
+“on” state, the corresponding layer will be added into the visual output, with the active layer indicated by a
+“yellow” menu item.</p>
+<p>The middle pane renders the visual output promptly and responsively, updating whenever paramters are modified.
+It offers several mouse actions: zooming (using the mouse wheel), rotating (by holding the left mouse button),
+and dragging (by holding “Ctrl” + left mouse button). Mac OS users may need to replace the “Ctrl” with the “Command” key.</p>
+<p>The top-right panel offers a user-friendly interface for conveniently adjusting parameters that control the appearance
+of the currently active layer and optimizing the layout of each layer. Particullaly, it allows you to switch between
+two view modes: the 2D orthographic mode and the 3D orbiting perspective mode for a versatile viewing experience.</p>
+<video autoplay="True" controls="True" height="500" loop="True" preload="auto" width="550"><source src="_static/spatial-live.demo.mp4" type="video/mp4"></video><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="variable-types-and-visual-layers">
+<h2>Variable types and visual layers<a class="headerlink" href="#variable-types-and-visual-layers" title="Link to this heading"></a></h2>
+<p>Basically, in spatial omics data processing, regardless of the data source’s origin, from the perspective of spatial-live,
+datasets can consistentlly be categorized into four variable types: categorical, numerical, gene heatmap and geometric
+shape variables. Spatiall-live adeptly generates tailored visual layers for each of these variable types. These are
+elucidated below:</p>
+<ul>
+<li><p><strong>Categorial variable -&gt; ScatterplotLayer</strong></p>
+<p>Each categorial variable will be rendered into a ScatterplotLayer, where each data element is represented by a
+small circle dot (spatially-resolved spot). The color of these dots is assigned based on their categorial value,
+and the radius of these circle points can be adjusted to match the spatial resolution of spots.</p>
+</li>
+<li><p><strong>Numerical variable -&gt; ColumnLayer</strong></p>
+<p>Each numerical variable can be visualized using a ColumnLayer, where each data element is represented by an extruded
+cylinder column. The height of each column is proporsional to the range of numerical values. Similar to the categorical
+variable in ScatterplotLayer, the radius of cylinder can be adjusted to match the spatial resolution of spots.</p>
+</li>
+<li><p><strong>Gene Heatmap variable -&gt; HeatBitmapLayer</strong></p>
+<p>Gene heatmap variables, while fundamentally numerical, are distinguished from the previously mentioned numerical variables
+due to the spatial resolution of spots on the image, particularly the gap distance between spots, akin to the “radius”
+parameter in the ScatterplotLayer and ColumnLayer. For gene heatmap variables, spatial-live generates a continuous heatmap
+layer using Gaussian estimation to fill these spatial gaps, using gene expression values as weights. Here, we employ the
+Fast Gaussian kernel density estimation (<a class="reference external" href="https://github.com/uwdata/fast-kde">fast-kde</a>) for gene heatmap plotting.</p>
+</li>
+<li><p><strong>Geometric shape variable -&gt; GeoJsonLayer</strong></p>
+<p>Each geometric shape variable corresponds to a <a class="reference external" href="https://geojson.org/">GeoJson</a> file, encompassing collections of diverse
+geometric shapes rendered as a GeoJsonLayer. While optional in spatial-live, this feature can prove useful when users wish
+to include custom annotations in specific regions of interest (ROI) on the image, such as cancer cell-enriched regions or
+cell segmentation.</p>
+</li>
+</ul>
+</section>
+<section id="input-files">
+<h2>Input files<a class="headerlink" href="#input-files" title="Link to this heading"></a></h2>
+<p>To launch spatial-live, you’ll need to provide specific input files, with at least two being mandatory. The first
+essential file is the image file, and the second is a CSV file containing properly formatted columns, each corresponding
+to different types of variables. To simplify this process, we’ll use files from the “quickdemo/kidney” to illustrate
+the format specifications for these files.</p>
+<div class="line-block">
+<div class="line">quickdemo/kidney/output/</div>
+<div class="line">├── kidney_demo.png</div>
+<div class="line">├── kidney_demo.csv</div>
+<div class="line">├── json</div>
+<div class="line">│   └── ROI_kidney.json</div>
+<div class="line">│   └── leiden_kidney.json</div>
+</div>
+<ul>
+<li><p><strong>IMAGE file</strong> (for example: quickdemo/kidney/output/kidney_demo.png)</p>
+<p>Currently, spatial-live exclusively accepts PNG files as input images (other image formats can be easily converted
+to PNG using various tools). It is crucial to note that this input image defines the pixel coordinate space for all
+data plotting within the tool. You can find an example image file at “spatial-live/quickdemo/kidney/output/kidney_demo.png”.
+Please note that only one image file is allowed per case.</p>
+</li>
+<li><p><strong>CSV file</strong></p>
+<p>The CSV file serves as the primary means for spatial-live to define variables and their correspoding layers, and it
+comes with specific constraints that must be followed. Please note that each case should have only one CSV file.</p>
+<blockquote>
+<div><dl>
+<dt>Mandatory columns: The file header must include three essential columns.</dt><dd><p>“id:spot”: the unique ideentifier representing each cell/spot entity.</p>
+<p>“pos:pixel_x”: the pixel position along the X-axis in the image for each entity.</p>
+<p>“pos:pixel_y”: the pixel position along the Y-axis in the image for each entity.</p>
+</dd>
+<dt>Categorial columns: need to start with “char:”, and followed by a variable name. e.g.</dt><dd><p>“char:leiden”: this represents a categorical variable labeled “leiden”.</p>
+</dd>
+<dt>Numerical columns: need to start with “num:”, and followed by a variable name. e.g.</dt><dd><p>“num:Plat”: this represents a numerical variable labeled “Plat”.</p>
+<p>“num:Sprr1a”: this represents a numerical variable labeled “Sprr1a”.</p>
+</dd>
+<dt>Gene-heatmap columns: need to start with “gene:”, and followed by a gene name. e.g.</dt><dd><p>“gene:Cryab”: it represents a gene name for “Cryab”.</p>
+<p>“gene:Mrps6”: it represents a gene name for “Mrps6”.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+<p>The following table provides a few rows from the example kidney_demo.csv file:</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">kidney_demo.csv</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 6%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>id:spot</p></th>
+<th class="head"><p>pos:pixel_x</p></th>
+<th class="head"><p>pos:pixel_y</p></th>
+<th class="head"><p>char:leiden</p></th>
+<th class="head"><p>gene:Cryab</p></th>
+<th class="head"><p>gene:Mrps6</p></th>
+<th class="head"><p>num:Plat</p></th>
+<th class="head"><p>num:Sprr1a</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AAACAAGTATCTCCCA-1</p></td>
+<td><p>1392.05</p></td>
+<td><p>750.29</p></td>
+<td><p>1</p></td>
+<td><p>2.449</p></td>
+<td><p>2.826</p></td>
+<td><p>2.971</p></td>
+<td><p>1.293</p></td>
+</tr>
+<tr class="row-odd"><td><p>AAACACCAATAACTGC-1</p></td>
+<td><p>421.53</p></td>
+<td><p>569.53</p></td>
+<td><p>1</p></td>
+<td><p>0.000</p></td>
+<td><p>3.212</p></td>
+<td><p>2.728</p></td>
+<td><p>1.752</p></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>JSON file</strong></p>
+<p>The JSON file is an optional component but proves valuable when annotating regions of interest (ROI) on the image.
+Each feature within the JSON file must contain two mandatory keys (“id” and “group”) in the “properties” field. It
+is worth noting that spatial-live supports multiple JSON files, and these files should be placed within the same
+“json” folder for easy integration. The following content is extracted from the ROI_kidney.json file.</p>
+</li>
+</ul>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;features&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">           </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">381.96</span><span class="p">,</span><span class="w"> </span><span class="mf">760.15</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">343.73</span><span class="p">,</span><span class="w"> </span><span class="mf">952.1</span><span class="w">  </span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">622.3</span><span class="p">,</span><span class="w"> </span><span class="mf">923.95</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">],</span>
+<span class="w">           </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Polygon&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;feature-1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;grp-1&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Feature&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">           </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">803.69</span><span class="p">,</span><span class="w"> </span><span class="mf">872.77</span><span class="w">  </span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">785.31</span><span class="p">,</span><span class="w"> </span><span class="mf">1002.79</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">960.61</span><span class="p">,</span><span class="w"> </span><span class="mf">965.38</span><span class="w">  </span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">975.25</span><span class="p">,</span><span class="w"> </span><span class="mf">866.29</span><span class="w">  </span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">921.99</span><span class="p">,</span><span class="w"> </span><span class="mf">832.04</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">],</span>
+<span class="w">           </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Polygon&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;feature-2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;grp-2&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Feature&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">           </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">1042.96</span><span class="p">,</span><span class="w"> </span><span class="mf">1043.75</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">1012.11</span><span class="p">,</span><span class="w"> </span><span class="mf">1189.68</span><span class="w"> </span><span class="p">],</span><span class="w">  </span><span class="p">[</span><span class="w"> </span><span class="mf">1160.95</span><span class="p">,</span><span class="w"> </span><span class="mf">1132.59</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">1153.65</span><span class="p">,</span><span class="w"> </span><span class="mf">998.19</span><span class="w">  </span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">],</span>
+<span class="w">           </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Polygon&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;feature-3&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;grp-3&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Feature&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">   </span><span class="p">],</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FeatureCollection&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="concise-control-interface">
+<h2>Concise control interface<a class="headerlink" href="#concise-control-interface" title="Link to this heading"></a></h2>
+<p>Spatial-live offers a concise control interface located in the top-right corner.
+The content of this interface depends on the currently active layer. While most
+items remain constant, a few will change acoordingly. The following example pertains
+to an active ScatterplotLayer, with other layers having a similar interface.</p>
+<a class="reference internal image-reference" href="_images/control_panel.png"><img alt="_images/control_panel.png" class="align-center" src="_images/control_panel.png" style="width: 570.0px; height: 404.4px;" /></a>
+</section>
+<section id="tooltip-and-image-export">
+<h2>Tooltip and image export<a class="headerlink" href="#tooltip-and-image-export" title="Link to this heading"></a></h2>
+<p>It is worth noting that tooltips are available for most layers, except for the Gene
+Heatmap layer. You can enable this feature by toggling the “tooltip” button (on/off)
+in the control panel.</p>
+<p>Additionally, once you have configured and stacked all the layers to your satisfaction,
+you can export the final visualization to an external image by clicking the “Export Image”
+button in the middle pane.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="install.html" class="btn btn-neutral float-left" title="Installation &amp; Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="notebooks/kidney_demo.html" class="btn btn-neutral float-right" title="Data Preparation Tutorial - Kidney Visium" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Zhenqing Ye.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

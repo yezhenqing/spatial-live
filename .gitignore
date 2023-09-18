@@ -25,3 +25,10 @@ dist-ssr
 
 src/typings/*.d.ts
 
+node_modules
+
+docs/.venv
+docs/source/.ipynb_checkpoints
+
+quickdemo/liver/liver1slice1
+

@@ -42,7 +42,7 @@ You may need to install [docker](https://docs.docker.com/engine/install/) on you
 
 ```bash
    $ cd spatial-live
-   $ docker compose -f docker-compose.yml -d up
+   $ docker compose -f docker-compose.yml up -d
 ```
 
 *  development user

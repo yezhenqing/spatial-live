@@ -2,11 +2,8 @@
   <h2>{{ appstore.title }}</h2>
   <img src="~@/assets/spatial-logo.png" />
   <h3>A Lightweight & Versatile Visualization Tool for Spatial-Omics Data</h3>
-  <el-button type="warning">github</el-button>
-
-  <!--<el-button type="primary">document</el-button>-->
-
-  <el-button type="primary"><a href="/docs/build/html/index.html">document</a></el-button>
+  <el-button type="warning"><a href="https://github.com/yezhenqing/spatial-live">github</a></el-button>
+  <el-button type="primary"><a href="https://yezhenqing.github.io/spatial-live">document</a></el-button>
 
   <el-button type="success" @click="gotoSpatial">start</el-button>
   &nbsp;

@@ -65,7 +65,7 @@
 <li class="toctree-l2"><a class="reference internal" href="kidney_demo.html#10X-Visium-spatial-data-preparation">10X Visium spatial data preparation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kidney_demo.html#Preprocessing-and-quality-control">Preprocessing and quality control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kidney_demo.html#Highly-variable-genes-and-leiden-clustering">Highly variable genes and leiden clustering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kidney_demo.html#Preparing-input-files-for-spatial-live">Preparing input files for spatial-live</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kidney_demo.html#Preparing-input-files-for-Spatial-Live">Preparing input files for Spatial-Live</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kidney_demo.html#Geometric-Json-file">Geometric Json file</a></li>
 </ul>
 </li>
@@ -77,8 +77,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#Spatial-Distributions-of-Cells">Spatial Distributions of Cells</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Assign-Cell-Types">Assign Cell Types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Hepatocyte-Zonation:-Peri-Portal-and-Peri-Central-zones">Hepatocyte Zonation: Peri-Portal and Peri-Central zones</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Preparing-input-files-for-spatial-live">Preparing input files for spatial-live</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#A-screen-snapshot-from-spatial-live">A screen snapshot from spatial-live</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Preparing-input-files-for-Spatial-Live">Preparing input files for Spatial-Live</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#A-screen-snapshot-from-Spatial-Live">A screen snapshot from Spatial-Live</a></li>
 </ul>
 </li>
 </ul>
@@ -109,7 +109,7 @@
              
   <section id="Data-Preparation-Tutorial---Liver-Vizgen">
 <h1>Data Preparation Tutorial - Liver Vizgen<a class="headerlink" href="#Data-Preparation-Tutorial---Liver-Vizgen" title="Link to this heading"></a></h1>
-<p>This Jupyter notebook serves as a continuous demonstration of the step-by-step process involved in preparing input files for Spatial-live visualization. In a manner akin to the preceding tutorial centered on kidney data sourced from the 10X Visium platform, this tutorial shifts its focus to liver MERFISH data obtained from the Vizgen platform. This specific dataset measures 347 genes across a substantial &gt;300,000 liver cells in a single mouse liver slice. For the purpose of this demonstration,
+<p>This Jupyter notebook serves as a continuous demonstration of the step-by-step process involved in preparing input files for Spatial-Live visualization. In a manner akin to the preceding tutorial centered on kidney data sourced from the 10X Visium platform, this tutorial shifts its focus to liver MERFISH data obtained from the Vizgen platform. This specific dataset measures 347 genes across a substantial &gt;300,000 liver cells in a single mouse liver slice. For the purpose of this demonstration,
 we have customized and tailored the notebook, drawing inspiration from the <a class="reference external" href="https://squidpy.readthedocs.io/en/stable/notebooks/tutorials/tutorial_vizgen_mouse_liver.html">squidpy mouse liver tutorial</a> to align with our objectives.</p>
 <section id="Python-virtual-environment-setup">
 <h2>Python virtual environment setup<a class="headerlink" href="#Python-virtual-environment-setup" title="Link to this heading"></a></h2>
@@ -939,9 +939,9 @@ Name: count, dtype: int64
 </div>
 </section>
 </section>
-<section id="Preparing-input-files-for-spatial-live">
-<h2>Preparing input files for spatial-live<a class="headerlink" href="#Preparing-input-files-for-spatial-live" title="Link to this heading"></a></h2>
-<p>Now we are ready to extract the necessary data columns for the spatial-live input CSV file. This entails a set of essential columns, notably “id:barcode”, “pos:pixel_x”, and “pos:pixel_y”. Additionally, we aim to incorporate one categorical variable, namely “char:peri_zone”, as well as two numerical variables, “num:Vwf” and “num:Axin2”. Furthermore, we’ll designate two additional genes for generating heatmap plots, “gene:Aldh3a2” and “gene:Hsd17b6” from the top markers in previous sections.</p>
+<section id="Preparing-input-files-for-Spatial-Live">
+<h2>Preparing input files for Spatial-Live<a class="headerlink" href="#Preparing-input-files-for-Spatial-Live" title="Link to this heading"></a></h2>
+<p>Now we are ready to extract the necessary data columns for the Spatial-Live input CSV file. This entails a set of essential columns, notably “id:barcode”, “pos:pixel_x”, and “pos:pixel_y”. Additionally, we aim to incorporate one categorical variable, namely “char:peri_zone”, as well as two numerical variables, “num:Vwf” and “num:Axin2”. Furthermore, we’ll designate two additional genes for generating heatmap plots, “gene:Aldh3a2” and “gene:Hsd17b6” from the top markers in previous sections.</p>
 <p>Firstly, we extract the relevant columns corresponding to designated genes from the adata object.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
@@ -1093,7 +1093,7 @@ Name: count, dtype: int64
 </table>
 </div></div>
 </div>
-<p>And we further change the column names to comply with the rules from spatial-live, refer to the documents.</p>
+<p>And we further change the column names to comply with the rules from Spatial-Live, refer to the documents.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
 </pre></div>
@@ -1220,7 +1220,7 @@ Name: count, dtype: int64
 </pre></div>
 </div>
 </div>
-<p>Noticed that we have both the liver_demo.csv file and the liver_demo.png image file available for spatial-live visualization now.</p>
+<p>Noticed that we have both the liver_demo.csv file and the liver_demo.png image file available for Spatial-Live visualization now.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
 </pre></div>
@@ -1276,9 +1276,9 @@ id:spot,char:peri_zone,num:Vwf,num:Axin2,gene:Aldh3a2,gene:Hsd17b6,pos:pixel_x,p
 </pre></div></div>
 </div>
 </section>
-<section id="A-screen-snapshot-from-spatial-live">
-<h2>A screen snapshot from spatial-live<a class="headerlink" href="#A-screen-snapshot-from-spatial-live" title="Link to this heading"></a></h2>
-<p>Enclosed is a screen snapshot sourced from spatial-live, provided as a point of reference. This snapshot aptly demonstrates the tool’s capacity to present a wealth of information through a single figure, featuring multiple layers in a visually compelling manner. In the image below, the light-blue and orange heatmaps correspond to the genes “Aldh3a2” and “Hsd17b6,” respectively. Additionally, the green and purple column bars correspond to the genes “Vmf” and “Axin2,” respectively.</p>
+<section id="A-screen-snapshot-from-Spatial-Live">
+<h2>A screen snapshot from Spatial-Live<a class="headerlink" href="#A-screen-snapshot-from-Spatial-Live" title="Link to this heading"></a></h2>
+<p>Enclosed is a screen snapshot sourced from Spatial-Live, provided as a point of reference. This snapshot aptly demonstrates the tool’s capacity to present a wealth of information through a single figure, featuring multiple layers in a visually compelling manner. In the image below, the light-blue and orange heatmaps correspond to the genes “Aldh3a2” and “Hsd17b6,” respectively. Additionally, the green and purple column bars correspond to the genes “Vmf” and “Axin2,” respectively.</p>
 <p>PS: Given the substantial number of elements requiring rendering on the screen, notably each layer housing 228,036 data instances, the combined load of four layers nears 1 million elements. Consequently, it’s possible to encounter slight sluggishness when employing spatial-live, particularly on low-end GPU cards, during the exploration of this liver demo.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:

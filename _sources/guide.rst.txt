@@ -4,7 +4,7 @@ User Guide
 A quick demo
 ------------
 
-Spatial-live has shipped with a built-in exploration demo with an intuitive and straigthforward user interface.
+Spatial-Live has shipped with a built-in exploration demo with an intuitive and straigthforward user interface.
 The left panel primarily control the activation or deactivation of various variable layers. When toggled to the
 "on" state, the corresponding layer will be added into the visual output, with the active layer indicated by a 
 "yellow" menu item.
@@ -28,9 +28,9 @@ two view modes: the 2D orthographic mode and the 3D orbiting perspective mode fo
 Variable types and visual layers
 --------------------------------
 
-Basically, in spatial omics data processing, regardless of the data source's origin, from the perspective of spatial-live,
+Basically, in spatial omics data processing, regardless of the data source's origin, from the perspective of Spatial-Live,
 datasets can consistentlly be categorized into four variable types: categorical, numerical, gene heatmap and geometric
-shape variables. Spatiall-live adeptly generates tailored visual layers for each of these variable types. These are  
+shape variables. Spatiall-Live adeptly generates tailored visual layers for each of these variable types. These are  
 elucidated below:
 
 *  **Categorial variable -> ScatterplotLayer**
@@ -49,7 +49,7 @@ elucidated below:
 
    Gene heatmap variables, while fundamentally numerical, are distinguished from the previously mentioned numerical variables
    due to the spatial resolution of spots on the image, particularly the gap distance between spots, akin to the "radius"
-   parameter in the ScatterplotLayer and ColumnLayer. For gene heatmap variables, spatial-live generates a continuous heatmap
+   parameter in the ScatterplotLayer and ColumnLayer. For gene heatmap variables, Spatial-Live generates a continuous heatmap
    layer using Gaussian estimation to fill these spatial gaps, using gene expression values as weights. Here, we employ the 
    Fast Gaussian kernel density estimation (`fast-kde <https://github.com/uwdata/fast-kde>`_) for gene heatmap plotting. 
 
@@ -57,7 +57,7 @@ elucidated below:
 *  **Geometric shape variable -> GeoJsonLayer**
 
    Each geometric shape variable corresponds to a `GeoJson <https://geojson.org/>`_ file, encompassing collections of diverse 
-   geometric shapes rendered as a GeoJsonLayer. While optional in spatial-live, this feature can prove useful when users wish
+   geometric shapes rendered as a GeoJsonLayer. While optional in Spatial-Live, this feature can prove useful when users wish
    to include custom annotations in specific regions of interest (ROI) on the image, such as cancer cell-enriched regions or
    cell segmentation.
 
@@ -65,7 +65,7 @@ elucidated below:
 Input files
 -----------
 
-To launch spatial-live, you'll need to provide specific input files, with at least two being mandatory. The first
+To launch Spatial-Live, you'll need to provide specific input files, with at least two being mandatory. The first
 essential file is the image file, and the second is a CSV file containing properly formatted columns, each corresponding
 to different types of variables. To simplify this process, we'll use files from the "quickdemo/kidney" to illustrate 
 the format specifications for these files.
@@ -79,14 +79,14 @@ the format specifications for these files.
    
 * **IMAGE file** (for example: quickdemo/kidney/output/kidney_demo.png)
 
-  Currently, spatial-live exclusively accepts PNG files as input images (other image formats can be easily converted 
+  Currently, Spatial-Live exclusively accepts PNG files as input images (other image formats can be easily converted 
   to PNG using various tools). It is crucial to note that this input image defines the pixel coordinate space for all
   data plotting within the tool. You can find an example image file at "spatial-live/quickdemo/kidney/output/kidney_demo.png".
   Please note that only one image file is allowed per case.
 
 * **CSV file**
 
-  The CSV file serves as the primary means for spatial-live to define variables and their correspoding layers, and it
+  The CSV file serves as the primary means for Spatial-Live to define variables and their correspoding layers, and it
   comes with specific constraints that must be followed. Please note that each case should have only one CSV file.
   
    Mandatory columns: The file header must include three essential columns.
@@ -124,7 +124,7 @@ The following table provides a few rows from the example kidney_demo.csv file:
 
   The JSON file is an optional component but proves valuable when annotating regions of interest (ROI) on the image.
   Each feature within the JSON file must contain two mandatory keys ("id" and "group") in the "properties" field. It
-  is worth noting that spatial-live supports multiple JSON files, and these files should be placed within the same 
+  is worth noting that Spatial-Live supports multiple JSON files, and these files should be placed within the same 
   "json" folder for easy integration. The following content is extracted from the ROI_kidney.json file. 
 
 .. code-block:: json
@@ -159,7 +159,7 @@ The following table provides a few rows from the example kidney_demo.csv file:
 Concise control interface
 -------------------------
 
-Spatial-live offers a concise control interface located in the top-right corner.
+Spatial-Live offers a concise control interface located in the top-right corner.
 The content of this interface depends on the currently active layer. While most 
 items remain constant, a few will change acoordingly. The following example pertains
 to an active ScatterplotLayer, with other layers having a similar interface.

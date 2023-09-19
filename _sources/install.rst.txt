@@ -4,14 +4,14 @@ Installation & Usage
 Installation
 ------------
 
-First, please go to github website to download the spatial-live:
+First, please go to github website to download the Spatial-Live:
 
 .. code-block:: console
 
   $ git clone https://github.com/yezhenqing/spatial-live
 
 
-There are two ways to start spatial-live for different users:
+There are two ways to start Spatial-Live for different users:
 
 *  regular user 
 
@@ -36,7 +36,7 @@ If you are a development user, I will assume you already installed `node/npm <ht
 Usage
 -----
 
-After the docker or node server started, the spatial-live will be ready for exploration. You can 
+After the docker or node server started, the Spatial-Live will be ready for exploration. You can 
 open your browser to visit the url link: http://localhost:8225/
 
 .. tip::
@@ -45,18 +45,18 @@ open your browser to visit the url link: http://localhost:8225/
 
 .. image:: images/install-usage-1.png
 
-Spatial-live has provided a built-in demo for exploration, so you can be familiar with the tool quickly.
+Spatial-Live has provided a built-in demo for exploration, so you can be familiar with the tool quickly.
 To start with your own case, you can wrap up your data files into a new clean folder (For example, suppose
 we have our own data set -- liver-demo), and then copy this folder into the proper location. 
 
-If you are using spatial-live via docker, copy to spaital-live/userdata/:
+If you are using Spatial-Live via docker, copy to spaital-live/userdata/:
 
 .. code-block:: console
 
    $ cp -r /your_paht_to/liver-demo spatial-live/userdata/
    $ docker compose -f docker-compose.yml up -d
 
-If you are using spatial-live via node.js, copy to spatial-live/src/data/:
+If you are using Spatial-Live via node.js, copy to spatial-live/src/data/:
 
 .. code-block:: console
 

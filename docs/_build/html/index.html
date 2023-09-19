@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spatial-live: A Lightweight &amp; Versatile Visualization for Spatial-Omics Data &mdash; Spatial-live 1.0.0 documentation</title>
+  <title>Spatial-Live: A Lightweight &amp; Versatile Visualization Tool for Spatial-Omics Data &mdash; Spatial-live 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -62,7 +62,7 @@
 <li class="toctree-l2"><a class="reference internal" href="notebooks/kidney_demo.html#10X-Visium-spatial-data-preparation">10X Visium spatial data preparation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/kidney_demo.html#Preprocessing-and-quality-control">Preprocessing and quality control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/kidney_demo.html#Highly-variable-genes-and-leiden-clustering">Highly variable genes and leiden clustering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/kidney_demo.html#Preparing-input-files-for-spatial-live">Preparing input files for spatial-live</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/kidney_demo.html#Preparing-input-files-for-Spatial-Live">Preparing input files for Spatial-Live</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/kidney_demo.html#Geometric-Json-file">Geometric Json file</a></li>
 </ul>
 </li>
@@ -74,8 +74,8 @@
 <li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#Spatial-Distributions-of-Cells">Spatial Distributions of Cells</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#Assign-Cell-Types">Assign Cell Types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#Hepatocyte-Zonation:-Peri-Portal-and-Peri-Central-zones">Hepatocyte Zonation: Peri-Portal and Peri-Central zones</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#Preparing-input-files-for-spatial-live">Preparing input files for spatial-live</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#A-screen-snapshot-from-spatial-live">A screen snapshot from spatial-live</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#Preparing-input-files-for-Spatial-Live">Preparing input files for Spatial-Live</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#A-screen-snapshot-from-Spatial-Live">A screen snapshot from Spatial-Live</a></li>
 </ul>
 </li>
 </ul>
@@ -94,7 +94,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Spatial-live: A Lightweight &amp; Versatile Visualization for Spatial-Omics Data</li>
+      <li class="breadcrumb-item active">Spatial-Live: A Lightweight &amp; Versatile Visualization Tool for Spatial-Omics Data</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -104,19 +104,19 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="spatial-live-a-lightweight-versatile-visualization-for-spatial-omics-data">
-<h1>Spatial-live: A Lightweight &amp; Versatile Visualization for Spatial-Omics Data<a class="headerlink" href="#spatial-live-a-lightweight-versatile-visualization-for-spatial-omics-data" title="Link to this heading"></a></h1>
+  <section id="spatial-live-a-lightweight-versatile-visualization-tool-for-spatial-omics-data">
+<h1>Spatial-Live: A Lightweight &amp; Versatile Visualization Tool for Spatial-Omics Data<a class="headerlink" href="#spatial-live-a-lightweight-versatile-visualization-tool-for-spatial-omics-data" title="Link to this heading"></a></h1>
 <a class="reference internal image-reference" href="_images/spatial-demo.png"><img alt="_images/spatial-demo.png" class="align-center" src="_images/spatial-demo.png" style="width: 461.52px; height: 317.88px;" /></a>
-<p><strong>Spatial-live</strong> is a lightweight and versatile visualization tool specifically developed for single
+<p><strong>Spatial-Live</strong> is a lightweight and versatile visualization tool specifically developed for single
 cell spatial-omics data analysis, including spatial transcriptiomics and more. Its 3D integration
 of multiple layers within a single space makes it highly suitable for visualizing multi-modal
-spatial data. Leveraging the rendering capabilities of WebGL2 (GPU) technology, Spatial-live efficiently
+spatial data. Leveraging the rendering capabilities of WebGL2 (GPU) technology, Spatial-Live efficiently
 processes large datasets, offering interactivity, responsiveness, and a wide range of visualization
 effects through the stacking of multiple layers. As the saying goes, a picture is worth  a thousand
 words. We firmly believe that effective data visualization plays a pivotal role in data exploration
-and interpretation, serving as a key component in gaining insights from complex datasets. Spatial-live
+and interpretation, serving as a key component in gaining insights from complex datasets. Spatial-Live
 represents a valuable tool for achieving these objectives.</p>
-<p>The development of Spatial-live relied on several outstanding third-party libraries, such as deckgl,
+<p>The development of Spatial-Live relied on several outstanding third-party libraries, such as deckgl,
 vue3, and react framework, alongside numerous other open-source libraries that may not all be listed
 here. I am immensely grateful for the contributions of these libraries and the invaluable work they
 have provided.</p>
@@ -151,7 +151,7 @@ have provided.</p>
 <li class="toctree-l3"><a class="reference internal" href="notebooks/kidney_demo.html#Finding-marker-genes">Finding marker genes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/kidney_demo.html#Preparing-input-files-for-spatial-live">Preparing input files for spatial-live</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/kidney_demo.html#Preparing-input-files-for-Spatial-Live">Preparing input files for Spatial-Live</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/kidney_demo.html#Geometric-Json-file">Geometric Json file</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="notebooks/kidney_demo.html#Simple-geometric-polygons-for-JSON-layer">Simple geometric polygons for JSON layer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="notebooks/kidney_demo.html#Polygons-for-Leiden-cluster's-boundary">Polygons for Leiden cluster’s boundary</a></li>
@@ -175,8 +175,8 @@ have provided.</p>
 <li class="toctree-l3"><a class="reference internal" href="notebooks/liver_demo.html#Finding-marker-genes">Finding marker genes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#Preparing-input-files-for-spatial-live">Preparing input files for spatial-live</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#A-screen-snapshot-from-spatial-live">A screen snapshot from spatial-live</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#Preparing-input-files-for-Spatial-Live">Preparing input files for Spatial-Live</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#A-screen-snapshot-from-Spatial-Live">A screen snapshot from Spatial-Live</a></li>
 </ul>
 </li>
 </ul>

@@ -63,7 +63,7 @@
 <li class="toctree-l2"><a class="reference internal" href="notebooks/kidney_demo.html#10X-Visium-spatial-data-preparation">10X Visium spatial data preparation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/kidney_demo.html#Preprocessing-and-quality-control">Preprocessing and quality control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/kidney_demo.html#Highly-variable-genes-and-leiden-clustering">Highly variable genes and leiden clustering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/kidney_demo.html#Preparing-input-files-for-spatial-live">Preparing input files for spatial-live</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/kidney_demo.html#Preparing-input-files-for-Spatial-Live">Preparing input files for Spatial-Live</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/kidney_demo.html#Geometric-Json-file">Geometric Json file</a></li>
 </ul>
 </li>
@@ -75,8 +75,8 @@
 <li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#Spatial-Distributions-of-Cells">Spatial Distributions of Cells</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#Assign-Cell-Types">Assign Cell Types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#Hepatocyte-Zonation:-Peri-Portal-and-Peri-Central-zones">Hepatocyte Zonation: Peri-Portal and Peri-Central zones</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#Preparing-input-files-for-spatial-live">Preparing input files for spatial-live</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#A-screen-snapshot-from-spatial-live">A screen snapshot from spatial-live</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#Preparing-input-files-for-Spatial-Live">Preparing input files for Spatial-Live</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/liver_demo.html#A-screen-snapshot-from-Spatial-Live">A screen snapshot from Spatial-Live</a></li>
 </ul>
 </li>
 </ul>
@@ -109,7 +109,7 @@
 <h1>User Guide<a class="headerlink" href="#user-guide" title="Link to this heading"></a></h1>
 <section id="a-quick-demo">
 <h2>A quick demo<a class="headerlink" href="#a-quick-demo" title="Link to this heading"></a></h2>
-<p>Spatial-live has shipped with a built-in exploration demo with an intuitive and straigthforward user interface.
+<p>Spatial-Live has shipped with a built-in exploration demo with an intuitive and straigthforward user interface.
 The left panel primarily control the activation or deactivation of various variable layers. When toggled to the
 “on” state, the corresponding layer will be added into the visual output, with the active layer indicated by a
 “yellow” menu item.</p>
@@ -125,9 +125,9 @@ two view modes: the 2D orthographic mode and the 3D orbiting perspective mode fo
 </section>
 <section id="variable-types-and-visual-layers">
 <h2>Variable types and visual layers<a class="headerlink" href="#variable-types-and-visual-layers" title="Link to this heading"></a></h2>
-<p>Basically, in spatial omics data processing, regardless of the data source’s origin, from the perspective of spatial-live,
+<p>Basically, in spatial omics data processing, regardless of the data source’s origin, from the perspective of Spatial-Live,
 datasets can consistentlly be categorized into four variable types: categorical, numerical, gene heatmap and geometric
-shape variables. Spatiall-live adeptly generates tailored visual layers for each of these variable types. These are
+shape variables. Spatiall-Live adeptly generates tailored visual layers for each of these variable types. These are
 elucidated below:</p>
 <ul>
 <li><p><strong>Categorial variable -&gt; ScatterplotLayer</strong></p>
@@ -143,13 +143,13 @@ variable in ScatterplotLayer, the radius of cylinder can be adjusted to match th
 <li><p><strong>Gene Heatmap variable -&gt; HeatBitmapLayer</strong></p>
 <p>Gene heatmap variables, while fundamentally numerical, are distinguished from the previously mentioned numerical variables
 due to the spatial resolution of spots on the image, particularly the gap distance between spots, akin to the “radius”
-parameter in the ScatterplotLayer and ColumnLayer. For gene heatmap variables, spatial-live generates a continuous heatmap
+parameter in the ScatterplotLayer and ColumnLayer. For gene heatmap variables, Spatial-Live generates a continuous heatmap
 layer using Gaussian estimation to fill these spatial gaps, using gene expression values as weights. Here, we employ the
 Fast Gaussian kernel density estimation (<a class="reference external" href="https://github.com/uwdata/fast-kde">fast-kde</a>) for gene heatmap plotting.</p>
 </li>
 <li><p><strong>Geometric shape variable -&gt; GeoJsonLayer</strong></p>
 <p>Each geometric shape variable corresponds to a <a class="reference external" href="https://geojson.org/">GeoJson</a> file, encompassing collections of diverse
-geometric shapes rendered as a GeoJsonLayer. While optional in spatial-live, this feature can prove useful when users wish
+geometric shapes rendered as a GeoJsonLayer. While optional in Spatial-Live, this feature can prove useful when users wish
 to include custom annotations in specific regions of interest (ROI) on the image, such as cancer cell-enriched regions or
 cell segmentation.</p>
 </li>
@@ -157,7 +157,7 @@ cell segmentation.</p>
 </section>
 <section id="input-files">
 <h2>Input files<a class="headerlink" href="#input-files" title="Link to this heading"></a></h2>
-<p>To launch spatial-live, you’ll need to provide specific input files, with at least two being mandatory. The first
+<p>To launch Spatial-Live, you’ll need to provide specific input files, with at least two being mandatory. The first
 essential file is the image file, and the second is a CSV file containing properly formatted columns, each corresponding
 to different types of variables. To simplify this process, we’ll use files from the “quickdemo/kidney” to illustrate
 the format specifications for these files.</p>
@@ -171,13 +171,13 @@ the format specifications for these files.</p>
 </div>
 <ul>
 <li><p><strong>IMAGE file</strong> (for example: quickdemo/kidney/output/kidney_demo.png)</p>
-<p>Currently, spatial-live exclusively accepts PNG files as input images (other image formats can be easily converted
+<p>Currently, Spatial-Live exclusively accepts PNG files as input images (other image formats can be easily converted
 to PNG using various tools). It is crucial to note that this input image defines the pixel coordinate space for all
 data plotting within the tool. You can find an example image file at “spatial-live/quickdemo/kidney/output/kidney_demo.png”.
 Please note that only one image file is allowed per case.</p>
 </li>
 <li><p><strong>CSV file</strong></p>
-<p>The CSV file serves as the primary means for spatial-live to define variables and their correspoding layers, and it
+<p>The CSV file serves as the primary means for Spatial-Live to define variables and their correspoding layers, and it
 comes with specific constraints that must be followed. Please note that each case should have only one CSV file.</p>
 <blockquote>
 <div><dl>
@@ -246,7 +246,7 @@ comes with specific constraints that must be followed. Please note that each cas
 <li><p><strong>JSON file</strong></p>
 <p>The JSON file is an optional component but proves valuable when annotating regions of interest (ROI) on the image.
 Each feature within the JSON file must contain two mandatory keys (“id” and “group”) in the “properties” field. It
-is worth noting that spatial-live supports multiple JSON files, and these files should be placed within the same
+is worth noting that Spatial-Live supports multiple JSON files, and these files should be placed within the same
 “json” folder for easy integration. The following content is extracted from the ROI_kidney.json file.</p>
 </li>
 </ul>
@@ -280,7 +280,7 @@ is worth noting that spatial-live supports multiple JSON files, and these files 
 </section>
 <section id="concise-control-interface">
 <h2>Concise control interface<a class="headerlink" href="#concise-control-interface" title="Link to this heading"></a></h2>
-<p>Spatial-live offers a concise control interface located in the top-right corner.
+<p>Spatial-Live offers a concise control interface located in the top-right corner.
 The content of this interface depends on the currently active layer. While most
 items remain constant, a few will change acoordingly. The following example pertains
 to an active ScatterplotLayer, with other layers having a similar interface.</p>

@@ -1,5 +1,5 @@
 {
-  "name": "biozenspatial",
+  "name": "spatial-live",
   "private": true,
   "version": "0.0.1",
   "type": "module",
@@ -50,7 +50,7 @@
     "vite": "^4.3.2",
     "vue-tsc": "^1.4.2"
   },
-  "repository": "https://github.com/spatial-lvv.git",
+  "repository": "https://github.com/yezhenqing/spatial-live.git",
   "author": "Zhenqing Ye",
   "license": "MIT"
 }

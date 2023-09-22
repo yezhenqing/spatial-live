@@ -46,7 +46,7 @@ open your browser to visit the url link: http://localhost:8225/
 .. image:: images/install-usage-1.png
 
 Spatial-Live has provided a built-in demo for exploration, so you can be familiar with the tool quickly.
-To start with your own case, you can wrap up your data files into a new clean folder (For example, suppose
+**To start with your own case**, you can wrap up your data files into a new clean folder (For example, suppose
 we have our own data set -- liver-demo), and then copy this folder into the proper location. 
 
 If you are using Spatial-Live via docker, copy to spaital-live/userdata/:
@@ -63,6 +63,6 @@ If you are using Spatial-Live via node.js, copy to spatial-live/src/data/:
    $ cp -r /your_paht_to/liver-demo spatial-live/src/data/
    $ npm run dev
 
-Now you should be able to see the data set you just added as shown below:
+Now you should be able to open browser (http://localhost:8225) to see the data set you just added as shown below:
 
 .. image:: images/install-usage-2.png

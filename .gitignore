@@ -29,6 +29,7 @@ node_modules
 
 docs/.venv
 docs/source/.ipynb_checkpoints
+docs/_build/doctrees
 
 quickdemo/liver/liver1slice1
 

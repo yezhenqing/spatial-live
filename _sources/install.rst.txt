@@ -49,7 +49,7 @@ Spatial-Live has provided a built-in demo for exploration, so you can be familia
 **To start with your own case**, you can wrap up your data files into a new clean folder (For example, suppose
 we have our own data set -- liver-demo), and then copy this folder into the proper location. 
 
-If you are using Spatial-Live via docker, copy to spaital-live/userdata/:
+If you are using Spatial-Live via docker, copy to spatial-live/userdata/:
 
 .. code-block:: console
 

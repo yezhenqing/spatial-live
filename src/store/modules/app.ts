@@ -292,8 +292,7 @@ export const useAppStore = function () {
     //const dir_glob = import.meta.glob("/public/data/**/*.csv")
     const dir_glob = import.meta.glob("/src/data/**/*.csv")
     Object.keys(dir_glob).map((k: String) => {
-      //const ms = k.match("/public/data/[a-zA-Z]+/")
-      const ms = k.match("/src/data/[a-zA-Z-_]+/")
+      const ms = k.match("/src/data/[a-zA-Z0-9-_]+/")
       if (ms) {
         const sid = _.last(_.compact(ms[0].split("/")))
         appStore.sampleDict[sid] = {

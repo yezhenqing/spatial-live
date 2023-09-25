@@ -1,4 +1,4 @@
-# Spatial-live
+# Spatial-Live
 
 <img src="./public/spatial-demo.png" width="450" height="400">
 
@@ -9,13 +9,14 @@ A Lightweight & Versatile Visualization Tool for Spatial-Omics Data.
 Spatial-Live is a lightweight and versatile visualization tool specifically developed for
 single cell spatial-omics data analysis, including spatial transcriptiomics and more. Its 3D
 integration of multiple layers within a single space makes it highly suitable for
-visualizing multi-types spatial data. Leveraging the rendering capabilities of WebGL2 (GPU)
-technology, Spatial-Live efficiently processes large datasets, offering interactivity,
+visualizing multi-types spatial data. Leveraging the rendering capabilities of GPU-powered
+backend, Spatial-Live efficiently processes large datasets, offering interactivity,
 responsiveness, and a wide range of visualization effects through the stacking of multiple
 layers. As the saying goes, a picture is worth a thousand words. We firmly believe that
 effective data visualization plays a pivotal role in data exploration and interpretation,
 serving as a key component in gaining insights from complex datasets. Spatial-Live represents
 a valuable tool for achieving these objectives.
+
 
 The development of Spatial-Live relied on several outstanding third-party libraries, such as
 deckgl, vue3, and react framework, alongside numerous other open-source libraries that may

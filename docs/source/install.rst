@@ -49,7 +49,7 @@ Spatial-Live has provided a built-in demo for exploration, so you can be familia
 **To start with your own case**, you can wrap up your data files into a new clean folder (For example, suppose
 we have our own data set -- liver-demo), and then copy this folder into the proper location. 
 
-If you are using Spatial-Live via docker, copy to spaital-live/userdata/:
+If you are using Spatial-Live via docker, copy to spatial-live/userdata/:
 
 .. code-block:: console
 
@@ -66,3 +66,6 @@ If you are using Spatial-Live via node.js, copy to spatial-live/src/data/:
 Now you should be able to open browser (http://localhost:8225) to see the data set you just added as shown below:
 
 .. image:: images/install-usage-2.png
+
+.. warning::
+   Your data folder names must contain only alphanumeric characters or underscore and hyphen, no space/blank allowed. 

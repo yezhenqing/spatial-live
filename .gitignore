@@ -29,7 +29,9 @@ node_modules
 
 docs/.venv
 docs/source/.ipynb_checkpoints
-docs/_build/doctrees
+docs/source/google651d033f56b8045d.html
+#docs/_build/doctrees
+docs/_build
 
 quickdemo/liver/liver1slice1
 

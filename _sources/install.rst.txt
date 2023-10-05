@@ -15,7 +15,8 @@ There are two ways to start Spatial-Live for different users:
 
 *  regular user 
 
-You may need to install `docker <https://docs.docker.com/engine/install/>`_ on your computer already, then you can run the below command:
+You may need to install `docker <https://docs.docker.com/engine/install/>`_ on your computer already, then you can run the below command 
+(Please note that the initial setup may take a few minutes to configure the environment):
 
 .. code-block:: console
 

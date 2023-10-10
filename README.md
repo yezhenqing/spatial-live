@@ -60,6 +60,15 @@ If you are a development user, I will assume you already installed [node/npm](ht
 After the docker instance or node server started, the Spatial-Live will be ready for exploration. 
 You can open your browser to visit the url link: http://localhost:8225/
 
+## Citation
+
+If you use `Spatial-Live` in your work, please cite the publication (preprint now) as below:
+
+> **Spatial-Live: A lightweight and versatile tool for single cell spatial-omics data visualization**
+>
+> Zhenqing Ye, Zhao Lai, Siyuan Zheng, Yidong Chen
+>
+> _bioRxiv_ 2023 Sep 24. doi: [10.1101/2023.09.24.559173](https://doi.org/10.1101/2023.09.24.559173).
 
 ## License
 This repository is under MIT License. 

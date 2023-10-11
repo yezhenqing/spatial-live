@@ -1,4 +1,4 @@
-[![GitHub Traffic](https://img.shields.io/badge/dynamic/json?color=success&label=Views&query=count&url=https://gist.githubusercontent.com/yezhenqing/3f4d27bc7c037853175dbb6f01c52c7d/raw/traffic.json&logo=github)](https://github.com/MShawon/github-clone-count-badge)
+![GitHub Traffic](https://img.shields.io/badge/dynamic/json?color=success&label=Views&query=count&url=https://gist.githubusercontent.com/yezhenqing/3f4d27bc7c037853175dbb6f01c52c7d/raw/traffic.json&logo=github)
 [![GitHub Clones](https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=count&url=https://gist.githubusercontent.com/yezhenqing/2e512507539ee75bdeec75b74a17705f/raw/clone.json&logo=github)](https://github.com/MShawon/github-clone-count-badge) from Oct 01, 2023
 
 # Spatial-Live
